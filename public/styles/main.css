@@ -1,0 +1,21 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    background: url('../download.jpeg') no-repeat;
+    background-size: cover;
+    margin-left: 200px;
+    margin-right: 200px;
+
+}
+
+
+.posts{
+    background: transparent;
+}
+
+.card-title{
+    width:max-content;
+}
+
+.header{
+    font-size: 46px;
+}

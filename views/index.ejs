@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container">
+  <h1 class="mb-4 mt-4 header">Blog Website</h1>
+  <a href="/post/add/new" class="btn btn-success">Create Post</a>
+  <% if(locals.post) { %> <% post.forEach(post=> {%>
+  <div class="card mt-4 posts"><a href="/post/<%=post._id%>" style="text-decoration: none; color: inherit;">
+    <div class="card-body">
+      <h2 class="card-title mb-3 border-bottom border-dark"><%= post.title %></h2>
+      <p class="card-subtitle mb-2 text-body-secondary">
+        <%= post.date %>
+      </p>
+      <p class="card-text mb-2 fs-5"><%= post.desc %></p>
+      <a href="post/edit/<%=post._id%>" class="btn btn-info">Edit Post</a>
+      <a href="post/delete/<%=post._id%>" class="btn btn-danger">Delete</a>
+    </div>
+</a>
+  </div>
+  <%})%>
+</div>
+
+<% } %> <%- include("partials/footer.ejs") %>

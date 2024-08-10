@@ -1,0 +1,18 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container">
+  <h1 class="mb-4">Blog Website</h1>
+  <% if(locals.post) { %> 
+  <div class="card mt-4" >
+    <div class="card-body">
+      <h1 class="card-title"><%= post.title %></h1>
+      <h6 class="card-subtitle mb-2 text-body-secondary">
+        <%= post.date %>
+      </h6>
+      <p class="card-text mb-2"><%= post.desc %></p>
+      <p class="card-text mb-2"><%= post.content %></p>
+    </div>
+  </div>
+</div>
+
+<% } %> <%- include("partials/footer.ejs") %>

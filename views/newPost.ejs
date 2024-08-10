@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/post.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <%if(locals.post){%>
+      <form action="/newpost" method="POST">
+        <h1 class="header">New Article</h1>
+        <label class="box-title">Title</label>
+        <div class="input-box title">
+          <input type="text" name="title" required value="<%= post.title%>"/>
+        </div>
+        <label class="box-title">Description</label>
+        <div class="input-box description">
+          <textarea type="text" name="desc" required ><%= post.desc%></textarea>
+        </div>
+        <label class="box-title">Content</label>
+        <div class="input-box">
+          <textarea class="content" type="text" name="content" required ><%= post.content%></textarea>
+        </div>
+        <a href="/" class="btn cancel" type="submit" name="cancel">Cancel</a>
+        <% if(edit == true) {%>
+        <button class="btn submit" type="submit" name="submit" formaction="/post/changes/<%= post._id%>">Change</button>
+        <% } else {%>
+        <button class="btn submit" type="submit" name="submit">Submit</button>
+        <% }%>
+      </form>
+      <% }%>
+    </div>
+  </body>
+</html>
